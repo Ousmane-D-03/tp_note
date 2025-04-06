@@ -1,0 +1,106 @@
+Résumé du Cours "Techniques Algorithmiques et Programmation"
+Chapitre 1 : Introduction
+
+    Objectifs : Présenter des approches algorithmiques variées (formule close, exhaustive, récursive, etc.) et les implémenter en C avec OpenGL/SDL.
+
+    Concepts clés :
+
+        Problème Tchisla : Trouver une expression minimale avec un chiffre donné pour atteindre un nombre nn. Exemple : 10=4+4+410=4+4+4
+
+        ​.
+
+        Problèmes indécidables : Exemple du problème de l’arrêt (Halte), complexité de Kolmogorov (taille minimale d’un programme générant nn).
+
+        Approche exhaustive : Méthode brute-force, peu efficace pour nn grand (complexité exponentielle).
+
+        Complexité : Différence entre complexité en temps/espace et notations asymptotiques (O,Ω,ΘO,Ω,Θ).
+
+        Logarithmes : Propriétés, utilisation pour réduire la complexité (exemple : décomposition binaire).
+
+Chapitre 2 : Partition d’un entier
+
+    Définition : p(n)p(n) = nombre de façons de partitionner un entier nn en sommes d’entiers positifs.
+
+        Exemple : p(4)=5p(4)=5 (4, 3+1, 2+2, 2+1+1, 1+1+1+1).
+
+    Formule asymptotique : Estimation de Hardy-Ramanujan :
+    p(n)∼14n3exp⁡(π2n3)p(n)∼4n3
+
+​1​exp(π32n​
+
+    ​).
+
+    Algorithmes :
+
+        Approche exhaustive : Génération de tous les découpages binaires (inefficace, O(2n)O(2n)).
+
+        Récurrence :
+        p(n,k)=p(n−1,k−1)+p(n−k,k)p(n,k)=p(n−1,k−1)+p(n−k,k) (décomposition en parts de taille 1 ou ≥2).
+
+        Programmation dynamique : Optimisation par mémorisation des résultats intermédiaires.
+
+Chapitre 3 : Voyageur de commerce (TSP)
+
+    Problème : Trouver le chemin le plus court visitant toutes les villes exactement une fois.
+
+    Algorithmes :
+
+        Recherche exhaustive : Complexité O(n!)O(n!), impraticable pour n>20n>20.
+
+        Programmation dynamique : Algorithme de Held-Karp (O(n22n)O(n22n)).
+
+        Algorithmes d’approximation : 2-approximation via arbres couvrants (Christofides).
+
+Chapitre 4 : Navigation (Pathfinding)
+
+    Algorithmes :
+
+        Dijkstra : Trouve le plus court chemin dans un graphe pondéré (complexité O((V+E)log⁡V)O((V+E)logV)).
+
+        A* : Optimisation avec heuristique (distance estimée à la cible).
+
+Chapitre 5 : Diviser pour régner
+
+    Principes : Décomposition d’un problème en sous-problèmes indépendants.
+
+    Exemples :
+
+        Multiplication rapide : Algorithme de Karatsuba (O(nlog⁡23)O(nlog2​3)).
+
+        Théorème maître : Résolution de récurrences du type T(n)=aT(n/b)+f(n)T(n)=aT(n/b)+f(n).
+
+        Calcul du médian : Algorithme de sélection en O(n)O(n).
+
+Points Clés pour l’Examen
+
+    Approches algorithmiques :
+
+        Formule close : Utilisée quand une expression directe existe (ex : Fibonacci avec la formule de Binet).
+
+        Brute-force : À éviter pour nn grand (ex : Tchisla, TSP).
+
+        Récursivité : Basée sur des sous-problèmes (ex : partitions d’entiers).
+
+        Programmation dynamique : Mémorisation pour éviter les recalculs (ex : TSP, partitions).
+
+    Complexité :
+
+        Notations asymptotiques : OO (majorant), ΩΩ (minorant), ΘΘ (borne serrée).
+
+        Analyse : Identifier les boucles dominantes (ex : boucles imbriquées ⇒O(n2)⇒O(n2)).
+
+    Algorithmes spécifiques :
+
+        Dijkstra/A* : Pour le plus court chemin.
+
+        Karatsuba : Multiplication rapide via décomposition.
+
+        Théorème maître : Résoudre T(n)=aT(n/b)+O(nd)T(n)=aT(n/b)+O(nd).
+
+    Problèmes classiques :
+
+        Partition d’entier : Récurrence + programmation dynamique.
+
+        TSP : NP-dur, solutions approchées en pratique.
+
+        Logarithmes : Réduire la complexité (ex : recherche binaire O(log⁡n)O(logn)).
